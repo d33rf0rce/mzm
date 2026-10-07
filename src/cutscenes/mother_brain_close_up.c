@@ -2,6 +2,11 @@
 #include "cutscenes/cutscene_utils.h"
 #include "dma.h"
 #include "temp_globals.h"
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+#include "init_helpers.h"
+#include "menus/pause_screen.h"
 
 #include "data/shortcut_pointers.h"
 #include "data/cutscenes/cutscenes_data.h"

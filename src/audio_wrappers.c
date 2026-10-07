@@ -4,6 +4,8 @@
 #include "gba.h"
 #include "macros.h"
 
+#include "audio/track_internal.h"
+
 /**
  * @brief 2564 | 294 | Initializes the audio
  * 

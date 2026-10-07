@@ -1,5 +1,7 @@
 #include "display.h"
 #include "gba.h"
+#include "color_effects.h"
+#include "animated_graphics.h"
 
 #include "structs/display.h"
 #include "structs/color_effects.h"

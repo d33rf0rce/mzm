@@ -14,6 +14,8 @@
 
 #include "structs/cutscene.h"
 
+#include "menus/pause_screen.h"
+
 static void MechaRidleySeesSamusProcessOam(void);
 
 /**

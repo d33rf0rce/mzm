@@ -12,6 +12,11 @@
 #include "structs/audio.h"
 #include "structs/game_state.h"
 
+#include "init_helpers.h"
+#include "save_file.h"
+#include "update_input.h"
+#include "audio_wrappers.h"
+
 void InitializeGame(void)
 {
     WRITE_16(REG_DISPCNT, DCNT_BLANK);

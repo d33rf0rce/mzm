@@ -3,6 +3,13 @@
 #include "color_effects.h"
 #include "dma.h"
 #include "macros.h"
+#include "init_helpers.h"
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+#include "oam_id.h"
+#include "complex_oam.h"
+#include "menus/pause_screen.h"
 
 #include "data/shortcut_pointers.h"
 #include "data/generic_data.h"

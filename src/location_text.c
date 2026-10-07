@@ -2,6 +2,7 @@
 #include "gba.h"
 #include "macros.h"
 #include "sprite.h"
+#include "text.h"
 
 #include "data/sprites/area_banner.h"
 

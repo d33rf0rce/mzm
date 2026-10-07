@@ -1,6 +1,7 @@
 #include "escape.h"
 #include "gba.h"
 #include "event.h"
+#include "particle.h"
 
 #include "data/visual_effects_data.h"
 

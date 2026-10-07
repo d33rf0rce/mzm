@@ -24,6 +24,12 @@
 #include "structs/display.h"
 #include "structs/game_state.h"
 
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+#include "color_fading.h"
+#include "callbacks.h"
+#include "init_helpers.h"
+
 #define PAL_TO_FADE ((void*)(sEwramPointer))
 #define PAL_WITH_FADE ((void*)sEwramPointer + PALRAM_SIZE)
 

@@ -14,6 +14,15 @@
 #include "structs/display.h"
 #include "structs/samus.h"
 
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+
+#include "init_helpers.h"
+#include "oam_id.h"
+#include "complex_oam.h"
+#include "menus/pause_screen.h"
+
 static void RidleySpawnUpdateRidley(struct CutsceneOamData* pOam);
 static void RidleySpawnProcessOam(void);
 
