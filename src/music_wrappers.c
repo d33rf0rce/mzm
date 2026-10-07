@@ -9,6 +9,8 @@
 
 #include "constants/audio.h"
 
+#include "audio/track_internal.h"
+
 /**
  * @brief 3380 | 5c | DMA 2 interrupt callback
  * 

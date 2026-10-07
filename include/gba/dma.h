@@ -4,6 +4,7 @@
 #include "gba/memory.h"
 #include "types.h"
 #include "macros.h"
+#include "syscalls.h"
 
 #define REG_DMA0 (REG_BASE + 0x0b0)
 #define REG_DMA1 (REG_BASE + 0x0bc)

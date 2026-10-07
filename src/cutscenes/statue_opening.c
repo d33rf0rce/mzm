@@ -18,6 +18,12 @@
 #include "structs/connection.h"
 #include "structs/display.h"
 
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "init_helpers.h"
+#include "menus/pause_screen.h"
+#include "oam_id.h"
+
 static void StatueOpeningProcessOam(void);
 
 /**

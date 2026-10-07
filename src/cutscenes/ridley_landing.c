@@ -5,6 +5,13 @@
 #include "temp_globals.h"
 #include "fixed_point.h"
 #include "macros.h"
+#include "oam_id.h"
+#include "complex_oam.h"
+#include "menus/pause_screen.h"
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+#include "init_helpers.h"
 
 #include "data/cutscenes/cutscenes_data.h"
 #include "data/cutscenes/ridley_landing_data.h"

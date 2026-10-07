@@ -18,6 +18,9 @@
 #include "structs/game_state.h"
 #include "structs/text.h"
 
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+
 const u16** sStoryTextPointers[7] = {
     [LANGUAGE_JAPANESE] = sJapaneseTextPointers_Story,
     [LANGUAGE_HIRAGANA] = sHiraganaTextPointers_Story,

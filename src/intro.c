@@ -5,6 +5,12 @@
 #include "text.h"
 #include "dma.h"
 
+#include "init_helpers.h"
+#include "syscalls.h"
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+
 #include "data/shortcut_pointers.h"
 #include "data/intro_data.h"
 

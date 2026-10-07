@@ -3,6 +3,9 @@
 #include "dma.h"
 #include "gba.h"
 #include "bg_clip.h"
+#include "oam_id.h"
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
 
 #include "data/block_data.h"
 

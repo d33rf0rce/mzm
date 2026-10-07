@@ -1,6 +1,10 @@
 #include "particle.h"
 #include "sprites_ai/ruins_test.h"
 #include "escape.h" // Required
+#include "screen_shake.h"
+#include "color_fading.h"
+
+#include "audio_wrappers.h"
 
 #include "data/projectile_data.h"
 #include "data/sprite_data.h"

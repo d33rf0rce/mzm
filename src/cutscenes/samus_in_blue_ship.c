@@ -11,6 +11,13 @@
 #include "structs/cutscene.h"
 #include "structs/display.h"
 
+#include "init_helpers.h"
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "menus/pause_screen.h"
+#include "oam_id.h"
+#include "complex_oam.h"
+
 static void SamusInBlueShipShakeScreen(struct CutsceneGraphicsData* pGraphics);
 static void SamusInBlueShipUpdateControlPanel(struct CutsceneOamData* pOam);
 static void SamusInBlueShipProcessOam(void);

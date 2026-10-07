@@ -4,6 +4,12 @@
 #include "oam.h"
 #include "oam_id.h"
 #include "syscall_wrappers.h"
+#include "init_helpers.h"
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+#include "menus/pause_screen.h"
+#include "color_effects.h"
+#include "animated_graphics.h"
 
 #include "data/cutscenes/cutscenes_data.h"
 #include "data/cutscenes/kraid_rising_data.h"

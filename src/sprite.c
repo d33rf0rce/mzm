@@ -5,6 +5,8 @@
 #include "macros.h"
 #include "fixed_point.h"
 #include "sprites_ai/sprites.h"
+#include "sprite_util.h"
+#include "escape.h"
 
 #include "data/generic_data.h"
 #include "data/sprite_data.h"

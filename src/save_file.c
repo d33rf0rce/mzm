@@ -3,6 +3,9 @@
 #include "dma.h"
 #include "macros.h"
 #include "event.h"
+#include "minimap.h"
+#include "sram/sram.h"
+#include "save_file_load.h"
 
 #include "data/demo_data.h"
 #include "data/shortcut_pointers.h"

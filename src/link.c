@@ -2,6 +2,7 @@
 #include "macros.h"
 #include "gba.h"
 #include "link.h"
+#include "callbacks.h"
 
 #include "data/io_transfer_data.h"
 

@@ -15,6 +15,12 @@
 #include "structs/display.h"
 #include "structs/game_state.h"
 
+#include "init_helpers.h"
+#include "syscall_wrappers.h"
+#include "audio_wrappers.h"
+#include "music_wrappers.h"
+#include "menus/pause_screen.h"
+
 #define RIDLEY_IN_SPACE_LEAVING_PARTICLE_AMOUNT 12
 #define RIDLEY_IN_SPACE_VIEW_PARTICLE_AMOUNT 26
 #define RIDLEY_IN_SPACE_SHIP_AMOUNT 3
