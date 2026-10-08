@@ -1,6 +1,7 @@
 #include "cutscenes/mother_brain_close_up.h"
 #include "cutscenes/cutscene_utils.h"
 #include "dma.h"
+#include "oam_id.h"
 #include "temp_globals.h"
 #include "syscall_wrappers.h"
 #include "audio_wrappers.h"
@@ -584,4 +585,3 @@ static u8 MotherBrainCloseUpInitBubbles(u8 packId)
 
     return TRUE;
 }
-

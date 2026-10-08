@@ -3,6 +3,7 @@
 #include "audio_wrappers.h"
 #include "dma.h"
 #include "oam_id.h"
+#include "init_helpers.h"
 #include "syscall_wrappers.h"
 
 #include "data/cutscenes/cutscenes_data.h"

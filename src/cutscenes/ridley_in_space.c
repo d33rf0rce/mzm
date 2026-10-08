@@ -2,6 +2,7 @@
 #include "cutscenes/cutscene_utils.h"
 #include "dma.h"
 #include "oam_id.h"
+#include "complex_oam.h"
 
 #include "data/generic_data.h"
 #include "data/shortcut_pointers.h"

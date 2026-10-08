@@ -24,6 +24,7 @@
 #include "structs/display.h"
 #include "structs/samus.h"
 
+
 #define KRAID_RISING_PUFF_AMOUNT 11
 #define KRAID_RISING_DEBRIS_AMOUNT 6
 

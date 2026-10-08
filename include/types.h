@@ -6,7 +6,7 @@
 
 #define TRUE 1
 #define FALSE 0
-#define NULL ((void *)0)
+//#define NULL ((void *)0)
 
 typedef unsigned char u8;
 typedef signed char s8;
