@@ -8,7 +8,7 @@
 
 /**
  * @brief 57a24 | d4 | Writes to the IO registers using the WrittenToXXX globals
- * 
+ *
  */
 void IoWriteRegisters(void)
 {
@@ -62,7 +62,7 @@ void IoWriteRegisters(void)
 
 /**
  * @brief 57af8 | e0 | Writes to the IO registers using the WrittenToXXX globals during a transition
- * 
+ *
  */
 void IoWriteRegistersDuringTransition(void)
 {
@@ -122,7 +122,7 @@ void IoWriteRegistersDuringTransition(void)
 
 /**
  * 57bd8 | 74 | Updates the DISPCNT (Display Control) register
- * 
+ *
  * @param operation Operation (0 = Remove, 1 = Add)
  * @param value Value to apply
  */

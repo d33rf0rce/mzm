@@ -8,7 +8,7 @@
 
 /**
  * @brief 2564 | 294 | Initializes the audio
- * 
+ *
  */
 void InitializeAudio(void)
 {
@@ -88,7 +88,7 @@ void InitializeAudio(void)
 
 /**
  * @brief 27f8 | fc | Performs a sound action
- * 
+ *
  * @param action Action
  */
 void DoSoundAction(u32 action)
@@ -154,7 +154,7 @@ void DoSoundAction(u32 action)
 
 /**
  * @brief 28f4 | 124 | Sets up the DMA transfers to the fifo channels
- * 
+ *
  */
 void SetupSoundTransfer(void)
 {
@@ -206,7 +206,7 @@ void SetupSoundTransfer(void)
 
 /**
  * @brief 2a18 | 10 | Plays a sound
- * 
+ *
  * @param sound Sound ID
  */
 void SoundPlay(Sound sound)
@@ -216,7 +216,7 @@ void SoundPlay(Sound sound)
 
 /**
  * @brief 2a28 | 10 | Stops a sound
- * 
+ *
  * @param sound Sound ID
  */
 void SoundStop(Sound sound)
@@ -226,7 +226,7 @@ void SoundStop(Sound sound)
 
 /**
  * @brief 2a38 | 20 | To document
- * 
+ *
  * @param pTrack Track data pointer
  */
 void unk_2a38(struct TrackData* pTrack)
@@ -238,24 +238,24 @@ void unk_2a38(struct TrackData* pTrack)
 
 /**
  * @brief 2a58 | 34 | Stops every music/sound currently playing
- * 
+ *
  */
 void StopAllMusicAndSounds(void)
 {
     s32 i;
-    
+
     for (i = (u16)gNumMusicPlayers - 1; i >= 0; i--)
         StopMusicOrSound(sMusicTrackDataRom[i].pTrack);
 }
 
 /**
  * @brief 2a8c | 40 | To document
- * 
+ *
  */
 void unk_2a8c(void)
 {
     s32 i;
-    
+
     for (i = (u16)gNumMusicPlayers - 1; i >= 0; i--)
     {
         if (!(sMusicTrackDataRom[i].pTrack->unk_1E & TRUE))
@@ -265,7 +265,7 @@ void unk_2a8c(void)
 
 /**
  * @brief 2acc | 54 | Fades every single sound
- * 
+ *
  * @param timer Fading timer
  */
 void FadeAllSounds(u16 timer)
@@ -282,7 +282,7 @@ void FadeAllSounds(u16 timer)
 
 /**
  * @brief 2b20 | 44 | Plays a sound only if it isn't already playing
- * 
+ *
  * @param sound Sound ID
  */
 void SoundPlayNotAlreadyPlaying(Sound sound)
@@ -299,7 +299,7 @@ void SoundPlayNotAlreadyPlaying(Sound sound)
 
 /**
  * @brief 2b64 | 6e | To document
- * 
+ *
  * @param sound Sound ID
  */
 void unk_2b64(Sound sound)
@@ -329,7 +329,7 @@ void unk_2b64(Sound sound)
 
 /**
  * @brief 2bd4 | 3c | To document
- * 
+ *
  * @param sound Sound ID
  */
 void unk_2bd4(Sound sound)
@@ -344,7 +344,7 @@ void unk_2bd4(Sound sound)
 
 /**
  * @brief 2c10 | 3c | To document
- * 
+ *
  * @param pTrack Track data pointer
  */
 void unk_2c10(struct TrackData* pTrack)
@@ -377,19 +377,19 @@ void unk_2c10(struct TrackData* pTrack)
 
 /**
  * @brief 2c4c | 34 | To document
- * 
+ *
  */
 void unk_2c4c(void)
 {
     s32 i;
-    
+
     for (i = (u16)gNumMusicPlayers - 1; i >= 0; i--)
         unk_2c10(sMusicTrackDataRom[i].pTrack);
 }
 
 /**
  * @brief 2c80 | 14 | Fades out a sound
- * 
+ *
  * @param sound Sound ID
  * @param timer Fade timer
  */
@@ -400,7 +400,7 @@ void SoundFade(Sound sound, u16 timer)
 
 /**
  * @brief 2c94 | 54 | Apply fading to music or sound
- * 
+ *
  * @param pTrack Track data pointer
  * @param timer Fade timer
 */
@@ -427,14 +427,14 @@ void ApplyMusicSoundFading(struct TrackData* pTrack, u16 timer)
                 pTrack->fadingTimer = volume / timer;
             }
         }
-        
+
         pTrack->occupied = FALSE;
     }
 }
 
 /**
  * @brief 2ce8 | 44 | Apply raw(?) fading to music or sound
- * 
+ *
  * @param pTrack Track data pointer
  * @param timer Fade timer
 */
@@ -457,14 +457,14 @@ void ApplyRawMusicSoundFading(struct TrackData* pTrack, u16 timer)
                 pTrack->fadingTimer = volume / timer;
             }
         }
-        
+
         pTrack->occupied = FALSE;
     }
 }
 
 /**
  * @brief 2d2c | bc | To document
- * 
+ *
  * @param pTrack Track data pointer
  */
 void unk_2d2c(struct TrackData* pTrack)
@@ -523,7 +523,7 @@ void unk_2d2c(struct TrackData* pTrack)
 
 /**
  * @brief 2de8 | 14 | Plays a fading in sound
- * 
+ *
  * @param sound Sound ID
  * @param timer Fading timer
  */
@@ -534,7 +534,7 @@ void PlayFadingSound(Sound sound, u16 timer)
 
 /**
  * @brief 2dfc | 38 | Initializes a music that fades in
- * 
+ *
  * @param pTrack Track data pointer
  * @param pHeader Sound header pointer
  * @param timer Fading timer
@@ -556,12 +556,12 @@ void InitFadingMusic(struct TrackData* pTrack, const u8* pHeader, u16 timer)
 
 /**
  * @brief 2e34 | 38 | To document
- * 
+ *
  * @param pTrack Track data pointer
  * @param timer Fading timer
  */
 void unk_2e34(struct TrackData* pTrack, u16 timer)
-{    
+{
     if (!pTrack->occupied)
     {
         pTrack->occupied = TRUE;
@@ -578,7 +578,7 @@ void unk_2e34(struct TrackData* pTrack, u16 timer)
 
 /**
  * @brief 2e6c | 94 | To document
- * 
+ *
  * @param pTrack Track data pointer
  */
 void unk_2e6c(struct TrackData* pTrack)
@@ -631,7 +631,7 @@ void unk_2e6c(struct TrackData* pTrack)
 
 /**
  * @brief 2f00 | 128 | To document
- * 
+ *
  * @param musicTrack1 First music track
  * @param musicTrack2 Second music track
  * @param timer Timer
@@ -662,7 +662,7 @@ void unk_2f00(u16 musicTrack1, u16 musicTrack2, u16 timer)
             if (!(pTrack2->flags & 0xF8))
             {
                 pHeader = sSoundDataEntries[musicTrack1].pHeader;
-        
+
                 // Amount of tracks
                 if (pHeader[0] == 0)
                     ResetTrack(pTrack1);
@@ -696,7 +696,7 @@ void unk_2f00(u16 musicTrack1, u16 musicTrack2, u16 timer)
                         pTrack2->unk_26 = (gMusicInfo.maxSoundChannels * 4096) / timer;
                         pTrack2->unk_24 = 0;
                         pTrack2->maxSoundChannels = gMusicInfo.maxSoundChannels;
-            
+
                         InitTrack(pTrack1, pHeader);
                         pTrack1->flags = 0x40 | 0x2;
                         pTrack1->maybe_volume = 0;
@@ -718,7 +718,7 @@ void unk_2f00(u16 musicTrack1, u16 musicTrack2, u16 timer)
 
 /**
  * @brief 3028 | 30 | To document
- * 
+ *
  * @param pTrack Track data pointer
  * @param param_2 Unknown
  */
@@ -739,7 +739,7 @@ void unk_3028(struct TrackData* pTrack, u16 param_2)
 
 /**
  * @brief 3058 | 5c | To document
- * 
+ *
  * @param pTrack Track data pointer
  * @param variablesMask Track data variables mask
  * @param param_3 Unknown
@@ -778,7 +778,7 @@ void unk_3058(struct TrackData* pTrack, u16 variablesMask, u16 param_3)
 
 /**
  * @brief 30b4 | 5c | To document
- * 
+ *
  * @param pTrack Track data pointer
  * @param variablesMask Track data variables mask
  * @param param_3 Unknown
@@ -814,7 +814,7 @@ void unk_30b4(struct TrackData* pTrack, u16 variablesMask, u16 param_3)
 
 /**
  * @brief 3110 | 4c | To document
- * 
+ *
  * @param pTrack Track data pointer
  * @param variablesMask Track data variables mask
  * @param param_3 Unknown
@@ -849,7 +849,7 @@ void unk_3110(struct TrackData* pTrack, u16 variablesMask, u8 param_3)
 
 /**
  * @brief 315c | 44 | To document
- * 
+ *
  * @param pTrack Track data pointer
  * @param variablesMask Track data variables mask
  * @param param_3 Unknown
@@ -882,7 +882,7 @@ void unk_315c(struct TrackData* pTrack, u16 variablesMask, u8 param_3)
 
 /**
  * @brief 31a0 | 44 | To document
- * 
+ *
  * @param pTrack Track data pointer
  * @param variablesMask Track data variables mask
  * @param param_3 Unknown

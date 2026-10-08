@@ -43,7 +43,7 @@ static void GettingFullyPoweredSuitProcessOam(void);
 
 /**
  * @brief 65bd8 | 204 | Handles the animation part (entire cutscene)
- * 
+ *
  * @return u8 FALSE
  */
 static u8 GettingFullyPoweredSuitAnimation(void)
@@ -165,7 +165,7 @@ static u8 GettingFullyPoweredSuitAnimation(void)
 
 /**
  * @brief 65ddc | 60 | Updates the ring palette
- * 
+ *
  * @param pPalette Cutscene palette data pointer
  */
 static void GettingFullyPoweredSuitUpdateRingPalette(struct CutscenePaletteData* pPalette)
@@ -195,13 +195,13 @@ static void GettingFullyPoweredSuitUpdateRingPalette(struct CutscenePaletteData*
 
 /**
  * @brief 65e3c | 70 | Updates the ring object
- * 
+ *
  * @param pOam Cutscene OAM data pointer
  */
 static void GettingFullyPoweredSuitUpdateRing(struct CutsceneOamData* pOam)
 {
     u16 unk;
-    
+
     if (pOam->actions & RING_ACTION_SCALING_VELOCITY)
     {
         // Move increasingly faster
@@ -231,7 +231,7 @@ static void GettingFullyPoweredSuitUpdateRing(struct CutsceneOamData* pOam)
 
 /**
  * @brief 65eac | c4 | Updates a sparkle around the ring
- * 
+ *
  * @param pOam Cutscene OAM data pointer
  * @param sparkleId Sparkle ID
  */
@@ -266,7 +266,7 @@ static void GettingFullyPoweredSuitUpdateSparkleAroundRing(struct CutsceneOamDat
         if (!pOam->exists)
             pOam->actions = CUTSCENE_OAM_ACTION_NONE;
     }
-    
+
     if (pOam->exists)
     {
         // Exists, update position to ring position + offset
@@ -277,7 +277,7 @@ static void GettingFullyPoweredSuitUpdateSparkleAroundRing(struct CutsceneOamDat
 
 /**
  * @brief 65f70 | b0 | Updates a sparkle going up
- * 
+ *
  * @param pOam Cutscene OAM data pointer
  * @param sparkleId Sparkle ID
  */
@@ -320,7 +320,7 @@ static void GettingFullyPoweredSuitUpdateSparkleGoingUp(struct CutsceneOamData* 
             // X position + random offset
             pOam->xPosition = sGettingFullyPoweredSuitUpSparklesXPositions[sparkleId - OAM_UP_SPARKLES_START] +
                 MOD_AND(sRandomNumberTable[gFrameCounter8Bit], 64);
-            
+
             // Slightly below screen
             pOam->yPosition = SCREEN_SIZE_Y_SUB_PIXEL + BLOCK_SIZE;
             pOam->unk_18 = 0;
@@ -333,7 +333,7 @@ static void GettingFullyPoweredSuitUpdateSparkleGoingUp(struct CutsceneOamData* 
 
 /**
  * @brief 66020 | 33c | Initializes the getting fully powered suit cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 GettingFullyPoweredSuitInit(void)
@@ -397,7 +397,7 @@ static u8 GettingFullyPoweredSuitInit(void)
     CUTSCENE_DATA.oam[OAM_SLOT_RING_TOP] = CUTSCENE_DATA.oam[OAM_SLOT_RING_BOTTOM];
     // Lower priority than the ring bottom
     CUTSCENE_DATA.oam[OAM_SLOT_RING_TOP].priority = sGettingFullyPoweredSuitPageData[0].priority + 1;
-    
+
     UpdateCutsceneOamDataId(&CUTSCENE_DATA.oam[OAM_SLOT_RING_TOP], GETTING_FULLY_POWERED_SUIT_OAM_ID_RING_TOP);
 
     // Semi setup of the ring sparkles, they'll be properly initialized later
@@ -466,7 +466,7 @@ static struct CutsceneStageData sGettingFullyPoweredSuitStageData[3] = {
 
 /**
  * @brief 6635c | 34 | Main loop for the getting fully powered suit cutscene
- * 
+ *
  * @return u8 bool, ended
  */
 u8 GettingFullyPoweredSuitHandler(void)
@@ -476,13 +476,13 @@ u8 GettingFullyPoweredSuitHandler(void)
     ended = sGettingFullyPoweredSuitStageData[CUTSCENE_DATA.timeInfo.stage].pFunction();
     CutsceneUpdateBackgroundsPosition(TRUE);
     GettingFullyPoweredSuitProcessOam();
-    
+
     return ended;
 }
 
 /**
  * @brief 66390 | 38 | Processes the OAM
- * 
+ *
  */
 static void GettingFullyPoweredSuitProcessOam(void)
 {

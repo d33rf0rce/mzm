@@ -20,7 +20,7 @@ static void MechaRidleySeesSamusProcessOam(void);
 
 /**
  * @brief 65924 | 100 | Handles the eye part of the mecha sees samus cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 MechaRidleySeesSamusEyeOpen(void)
@@ -96,7 +96,7 @@ static u8 MechaRidleySeesSamusEyeOpen(void)
 
 /**
  * @brief 65a24 | 148 | Initializes the mecha ridley sees Samus cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 MechaRidleySeesSamusInit(void)
@@ -153,7 +153,7 @@ static struct CutsceneStageData sMechaSeesSamusStageData[3] = {
 
 /**
  * @brief 65b6c | 34 | Mecha ridley sees Samus cutscene main loop
- * 
+ *
  * @return u8 bool, ended
  */
 u8 MechaRidleySeesSamusHandler(void)
@@ -169,7 +169,7 @@ u8 MechaRidleySeesSamusHandler(void)
 
 /**
  * @brief 65ba0 | 38 | Processes the OAM for the cutscene
- * 
+ *
  */
 static void MechaRidleySeesSamusProcessOam(void)
 {

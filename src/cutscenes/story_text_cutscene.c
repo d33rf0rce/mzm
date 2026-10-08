@@ -40,7 +40,7 @@ const u16** sStoryTextPointers[7] = {
 
 /**
  * @brief 62b90 | fc | Initializes a story text cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 StoryTextCutsceneInit(void)
@@ -61,7 +61,7 @@ static u8 StoryTextCutsceneInit(void)
     BitFill(3, 0, BGCNT_TO_VRAM_CHAR_BASE(sStoryTextCutscenePagesData[0].graphicsPage) + 0x3000, 0x5000, 32);
 
     CutsceneSetBgcntPageData(sStoryTextCutscenePagesData[0]);
-    
+
     gWrittenToBldy_NonGameplay = BLDY_MAX_VALUE;
     gWrittenToBldalpha_L = BLDALPHA_MAX_VALUE;
     gWrittenToBldalpha_H = 0;
@@ -91,7 +91,7 @@ static u8 StoryTextCutsceneInit(void)
 
 /**
  * @brief 62c8c | 122 | Processes the text for the story text cutscenes
- * 
+ *
  * @return u8 FALSE
  */
 static u8 StoryTextCutsceneProcessText(void)
@@ -127,7 +127,7 @@ static u8 StoryTextCutsceneProcessText(void)
             {
                 result = TextProcessCurrentMessage(&gCurrentMessage, sStoryTextPointers[gLanguage][gCurrentMessage.messageId],
                     dst + gCurrentMessage.line * 0x200);
-                
+
                 switch (result)
                 {
                     case TEXT_STATE_ENDED:
@@ -169,7 +169,7 @@ static u8 StoryTextCutsceneProcessText(void)
 
 /**
  * @brief 62dac | 58 | Updates the vertical position of the background that has the text
- * 
+ *
  * @return u8 FALSE
  */
 static u8 StoryTextCutsceneSetVerticalOffset(void)
@@ -194,7 +194,7 @@ static u8 StoryTextCutsceneSetVerticalOffset(void)
 
 /**
  * @brief 62e04 | 84 | Handles the fade in of the text
- * 
+ *
  * @return u8 FALSE
  */
 static u8 StoryTextCutsceneFadeIn(void)
@@ -231,7 +231,7 @@ static u8 StoryTextCutsceneFadeIn(void)
 
 /**
  * @brief 62e88 | 80 | Handles the fade in of the text
- * 
+ *
  * @return u8 FALSE
  */
 static u8 StoryTextCutsceneFadeOut(void)
@@ -260,7 +260,7 @@ static u8 StoryTextCutsceneFadeOut(void)
                 }
                 else
                 {
-                    CUTSCENE_DATA.dispcnt &= ~sStoryTextCutscenePagesData[0].bg; // Message hasn't ended yet, clear the text background   
+                    CUTSCENE_DATA.dispcnt &= ~sStoryTextCutscenePagesData[0].bg; // Message hasn't ended yet, clear the text background
                 }
 
                 CUTSCENE_DATA.timeInfo.timer = 0;
@@ -275,7 +275,7 @@ static u8 StoryTextCutsceneFadeOut(void)
 
 /**
  * @brief 62f08 | 64 | Handles checking for input to dismiss the text
- * 
+ *
  * @return u8 FALSE
  */
 static u8 StoryTextCutsceneCheckInput(void)
@@ -303,7 +303,7 @@ static u8 StoryTextCutsceneCheckInput(void)
                 CUTSCENE_DATA.timeInfo.stage++;
             }
             break;
-        
+
         case 2:
             if (gChangedInput & (KEY_A | KEY_B))
             {
@@ -319,7 +319,7 @@ static u8 StoryTextCutsceneCheckInput(void)
 
 /**
  * @brief 62f6c | 6c | Checks if a story text cutscene should end
- * 
+ *
  * @return u8 bool, ended
  */
 static u8 StoryTextCutsceneEnd(void)
@@ -377,7 +377,7 @@ static struct CutsceneStageData sStoryTextCutsceneStageData[7] = {
 
 /**
  * @brief 62fd8 | 30 | Main loop for the story text cutscenes
- * 
+ *
  * @return u8 bool, ended
  */
 u8 StoryTextCutsceneHandler(void)

@@ -93,7 +93,7 @@ static s16 sEnterTourianMetroidsEndPosition[MAX_METROID_IDS][2] = {
 
 /**
  * @brief 67080 | 310 | Handles the entire cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 EnterTourianAnimation(void)
@@ -254,7 +254,7 @@ static u8 EnterTourianAnimation(void)
 
 /**
  * @brief 67390 | 50 | Handles the movement of the backgrounds
- * 
+ *
  */
 static void EnterTourianScrollBackground(void)
 {
@@ -276,7 +276,7 @@ static void EnterTourianScrollBackground(void)
 
 /**
  * @brief 673e0 | 378 | Updates a metroid
- * 
+ *
  * @param pOam Cutscene oam data pointer
  * @param metroidId Metroid oam
  */
@@ -342,7 +342,7 @@ static void EnterTourianUpdateMetroid(struct CutsceneOamData* pOam, u8 metroidId
                 pOam->yVelocity = MOD_BLOCK_AND(sRandomNumberTable[(pOam->timer + metroidId) & UCHAR_MAX], 2) ? -PIXEL_SIZE : PIXEL_SIZE;
                 pOam->yPosition += pOam->yVelocity;
             }
-            
+
             pOam->unk_18 = MOD_AND(sRandomNumberTable[(pOam->timer - metroidId) & UCHAR_MAX], 0x40) + 8;
 
             if (pOam->unk_18 == pOam->unk_16)
@@ -435,7 +435,7 @@ static void EnterTourianUpdateMetroid(struct CutsceneOamData* pOam, u8 metroidId
 
     pShell->yPosition = pOam->yPosition;
     pShell->xPosition = pOam->xPosition;
-    
+
     position = *CutsceneGetBgHorizontalPointer(sEnterTourianPageData[0].bg);
     var_2 = position - pOam->xPosition;
     position = var_2 + (NON_GAMEPLAY_START_BG_POS - HALF_BLOCK_SIZE - ONE_SUB_PIXEL);
@@ -451,7 +451,7 @@ static void EnterTourianUpdateMetroid(struct CutsceneOamData* pOam, u8 metroidId
 
 /**
  * @brief 67758 | 8c | Updates the metroid palette
- * 
+ *
  * @param pPalette Cutscene palette data pointer
  * @param grabbedPal bool, use grabbed pal
  */
@@ -493,7 +493,7 @@ static void EnterTourianSwitchMetroidPalette(struct CutscenePaletteData* pPalett
 
 /**
  * @brief 677e4 | 168 | Updates the pirate
- * 
+ *
  * @param pOam Cutscene oam data pointer
  */
 static void EnterTourianUpdatePirate(struct CutsceneOamData* pOam)
@@ -572,7 +572,7 @@ static void EnterTourianUpdatePirate(struct CutsceneOamData* pOam)
 
 /**
  * @brief 6794c | 3c0 | Initializes the enter tourian cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 EnterTourianInit(void)
@@ -590,7 +590,7 @@ static u8 EnterTourianInit(void)
     CallLZ77UncompVram(sEnterTourianDeadSpacePirateGfx_2, VRAM_BASE + 0x10400);
     CallLZ77UncompVram(sEnterTourianDeadSpacePirateGfx_3, VRAM_BASE + 0x10800);
     CallLZ77UncompVram(sMetroidGfx, VRAM_BASE + 0x14000);
-    
+
     CallLZ77UncompVram(sEnterTourianBackgroundGfx, VRAM_BASE + sEnterTourianPageData[0].graphicsPage * 0x4000);
     CallLZ77UncompVram(sEnterTourianForegroundGfx, VRAM_BASE + sEnterTourianPageData[1].graphicsPage * 0x4000);
 
@@ -622,7 +622,7 @@ static u8 EnterTourianInit(void)
     CUTSCENE_DATA.oam[5].currentAnimationFrame = 4;
     CUTSCENE_DATA.oam[7].currentAnimationFrame = 8;
 
-    
+
     CUTSCENE_DATA.oam[0].oamId = 2;
     CUTSCENE_DATA.oam[0].exists = TRUE;
     CUTSCENE_DATA.oam[0].boundBackground = 3;
@@ -695,7 +695,7 @@ u8 EnterTourianHandler(void)
 
 /**
  * @brief 67d40 | 4c | Processes the OAM for the cutscene
- * 
+ *
  */
 static void EnterTourianProcessOam(void)
 {

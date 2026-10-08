@@ -112,7 +112,7 @@ static u16 sKraidRisingDebrisSpawnXPosition[KRAID_RISING_DEBRIS_AMOUNT] = {
 
 /**
  * @brief 6240c | 2ec | Handles the kraid rising part
- * 
+ *
  * @return u8 FALSE
  */
 static u8 KraidRisingRising(void)
@@ -241,7 +241,7 @@ static u8 KraidRisingRising(void)
 
 /**
  * @brief 626f8 | 54 | Updates a puff
- * 
+ *
  * @param pOam Cutscene OAM Data Pointer
  * @param puffId Puff ID
  * @return struct CutsceneOamData* First param
@@ -275,7 +275,7 @@ static struct CutsceneOamData* KraidRisingUpdatePuff(struct CutsceneOamData* pOa
 
 /**
  * @brief 6274c | c0 | Updates a debris
- * 
+ *
  * @param pOam Cutscene OAM Data Pointer
  * @param puffId Debris ID
  * @return struct CutsceneOamData* First param
@@ -295,7 +295,7 @@ static struct CutsceneOamData* KraidRisingUpdateDebris(struct CutsceneOamData* p
 
         // Set spawn X (base + [0-64])
         pOam->xPosition = sKraidRisingDebrisSpawnXPosition[debrisId] + MOD_AND(sRandomNumberTable[~MOD_AND(gFrameCounter8Bit + debrisId, ARRAY_SIZE(sRandomNumberTable))], 64);
-        
+
         // Start above ceiling
         pOam->yPosition = -HALF_BLOCK_SIZE;
 
@@ -328,7 +328,7 @@ static struct CutsceneOamData* KraidRisingUpdateDebris(struct CutsceneOamData* p
 
 /**
  * @brief 6280c | 188 | Handles the kraid opening his eyes part of the cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 KraidRisingOpeningEyes(void)
@@ -412,8 +412,8 @@ static u8 KraidRisingOpeningEyes(void)
 
 /**
  * @brief 62994 | 190 | Initializes the kraid rising cutscene
- * 
- * @return u8 
+ *
+ * @return u8
  */
 static u8 KraidRisingInit(void)
 {
@@ -421,7 +421,7 @@ static u8 KraidRisingInit(void)
 
     // Load close up palette
     DmaTransfer(3, sKraidRisingCloseUpPal, PALRAM_BASE, sizeof(sKraidRisingCloseUpPal), 16);
-    
+
     SET_BACKDROP_COLOR(COLOR_BLACK);
 
     // Load close up graphics
@@ -492,7 +492,7 @@ static struct CutsceneStageData sKraidRisingStageData[4] = {
 
 /**
  * @brief 62b24 | 37 | Kraid rising cutscene main loop
- * 
+ *
  * @return u8 1 if ended, 0 otherwise
  */
 u8 KraidRisingHandler(void)
@@ -509,7 +509,7 @@ u8 KraidRisingHandler(void)
 
 /**
  * @brief 62b58 | 38 | Processes the OAM for the cutscene
- * 
+ *
  */
 static void KraidRisingProcessOam(void)
 {

@@ -26,7 +26,7 @@
 
 /**
  * @brief 800f4 | 90 | V-blank code for the intro
- * 
+ *
  */
 static void IntroVBlank(void)
 {
@@ -47,7 +47,7 @@ static void IntroVBlank(void)
 
 /**
  * @brief 80184 | 58 | V-blank code for the intro fuzz
- * 
+ *
  */
 static void IntroFuzzVBlank(void)
 {
@@ -69,7 +69,7 @@ static void IntroFuzzVBlank(void)
 
 /**
  * @brief 801dc | 1d4 | Initializes the intro
- * 
+ *
  */
 static void IntroInit(void)
 {
@@ -144,7 +144,7 @@ static void IntroInit(void)
 }
 /**
  * @brief 803b0 | 1A0 | Processes the OAM for the intro text
- * 
+ *
  */
 static void IntroTextProcessOam(void)
 {
@@ -185,7 +185,7 @@ static void IntroTextProcessOam(void)
         for (; i < partCount; i++)
         {
             // Brackets are necesary
-            if (i >= INTRO_DATA.finalCharacter) 
+            if (i >= INTRO_DATA.finalCharacter)
             {
                 break;
             }
@@ -239,7 +239,7 @@ static void IntroTextProcessOam(void)
 
 /**
  * @brief 80550 | 180 | Processes the intro text
- * 
+ *
  * @param action Text action
  * @param indent Indent
  * @return u8 To document
@@ -350,13 +350,13 @@ static u8 IntroProcessText(IntroTextAction action, u16 indent)
 
     if (flag_unk3 != 0)
         return 1;
-    
+
     return 0;
 }
 
 /**
  * @brief 806d0 | e8 | Handles the "Emergency order" text part of the intro
- * 
+ *
  * @return u8 FALSE
  */
 static u8 IntroEmergencyOrder(void)
@@ -407,7 +407,7 @@ static u8 IntroEmergencyOrder(void)
 
 /**
  * @brief 807b8 | 134 | Processes the OAM for the ship flying towards the camera
- * 
+ *
  */
 static void IntroShipFlyingTowardsCameraProcessOam(void)
 {
@@ -468,7 +468,7 @@ static void IntroShipFlyingTowardsCameraProcessOam(void)
 
 /**
  * @brief 808ec | 9c | Handles the ship flying towards camera part of the intro
- * 
+ *
  * @return u8 FALSE
  */
 static u8 IntroShipFlyingTowardsCamera(void)
@@ -509,7 +509,7 @@ static u8 IntroShipFlyingTowardsCamera(void)
 
 /**
  * @brief 80988 | 100 | Handles the samus in her ship part of the intro
- * 
+ *
  * @return u8 FALSE
  */
 static u8 IntroSamusInHerShip(void)
@@ -575,8 +575,8 @@ static u8 IntroSamusInHerShip(void)
 
 /**
  * @brief 80a88 | f0 | Handles the "Exterminate..." text part of the intro
- * 
- * @return u8 
+ *
+ * @return u8
  */
 static u8 IntroExterminate(void)
 {
@@ -626,7 +626,7 @@ static u8 IntroExterminate(void)
 
 /**
  * @brief 80b78 | 154 | Processes the OAM for the view of zebes part of the intro
- * 
+ *
  */
 static void IntroViewOfZebesProcessOam(void)
 {
@@ -702,7 +702,7 @@ static void IntroViewOfZebesProcessOam(void)
 
 /**
  * @brief 80ccc | 12c | Handles the view of zebes part of the intro
- * 
+ *
  * @return u8 FALSE
  */
 static u8 IntroViewOfZebes(void)
@@ -769,7 +769,7 @@ static u8 IntroViewOfZebes(void)
 
 /**
  * @brief 80df8 | 100 | Handles the "Defeat..." text part of the intro
- * 
+ *
  * @return u8 FALSE
  */
 static u8 IntroDefeat(void)
@@ -822,7 +822,7 @@ static u8 IntroDefeat(void)
 
 /**
  * @brief 80ef8 | 120 | Handles the mother brain part of the intro
- * 
+ *
  * @return u8 FALSE
  */
 static u8 IntroMotherBrain(void)
@@ -882,7 +882,7 @@ static u8 IntroMotherBrain(void)
 
 /**
  * @brief 81018 | 88 | Processes the OAM for the intro fuzz
- * 
+ *
  */
 static void IntroFuzzProcessOam(void)
 {
@@ -918,7 +918,7 @@ static void IntroFuzzProcessOam(void)
 
 /**
  * @brief 810a0 | dc | Handles the fuzz part of the intro
- * 
+ *
  * @return u8 bool, ended
  */
 static u8 IntroFuzz(void)
@@ -993,7 +993,7 @@ static IntroFunc_T sIntroStageFunctionsPointer[8] = {
 
 /**
  * @brief 8117c | cc | Main loop for the intro
- * 
+ *
  * @return u32 bool, ended
  */
 u32 IntroHandler(void)
@@ -1016,7 +1016,7 @@ u32 IntroHandler(void)
                 gWrittenToBldy_NonGameplay--;
                 break;
             }
-            
+
             INTRO_DATA.bldcnt = 0;
             gSubGameMode1++;
             break;
@@ -1037,7 +1037,7 @@ u32 IntroHandler(void)
 
             ResetFreeOam();
             break;
-    
+
         case 3:
             ended = TRUE;
     }

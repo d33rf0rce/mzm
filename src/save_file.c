@@ -55,7 +55,7 @@ static struct SaveFileInfo sSaveFileInfo_Empty = {
 
 /**
  * @brief 7329c | 64 | Fully reads the flash save into Ewram
- * 
+ *
  */
 void SramRead_All(void)
 {
@@ -97,7 +97,7 @@ void SramRead_All(void)
 
 /**
  * @brief 73300 | 94 | Writes the file screen options unlocked to flash sram
- * 
+ *
  */
 void SramWrite_FileScreenOptionsUnlocked(void)
 {
@@ -147,14 +147,14 @@ void SramWrite_FileScreenOptionsUnlocked(void)
 
 /**
  * @brief 73394 | 154 | Reads the file screen options unlocked from flash sram
- * 
+ *
  */
 void SramRead_FileScreenOptionsUnlocked(void)
 {
     u32 fileASanityCheck;
     u32 fileBSanityCheck;
     u32 fileCSanityCheck;
-    
+
     fileASanityCheck = SramCheck_FileScreenOptionsUnlocked(0);
     fileBSanityCheck = SramCheck_FileScreenOptionsUnlocked(1);
     fileCSanityCheck = SramCheck_FileScreenOptionsUnlocked(2);
@@ -214,7 +214,7 @@ void SramRead_FileScreenOptionsUnlocked(void)
         SramCopy_FileScreenOptionsUnlocked();
         return;
     }
-    
+
     // Sram is considered corrupted, fully clear it
     EraseSram();
     DmaTransfer(3, &sFileScreenOptionsUnlocked_Empty, &gFileScreenOptionsUnlocked, sizeof(gFileScreenOptionsUnlocked), 16);
@@ -223,7 +223,7 @@ void SramRead_FileScreenOptionsUnlocked(void)
 
 /**
  * @brief 734e8 | 9c | Checks the validity of the file screen options unlocked for a file
- * 
+ *
  * @param fileNumber File number
  * @return u32 Sanity checks
  */
@@ -271,7 +271,7 @@ u32 SramCheck_FileScreenOptionsUnlocked(u8 fileNumber)
 
 /**
  * @brief 73584 | 2c | Copies the file screen options unlocked from Sram
- * 
+ *
  */
 void SramCopy_FileScreenOptionsUnlocked(void)
 {
@@ -290,7 +290,7 @@ void SramCopy_FileScreenOptionsUnlocked(void)
 
 /**
  * @brief 735b0 | 128 | Processes saving the current file during the intro
- * 
+ *
  * @return u32 bool, ended
  */
 u32 SramProcessIntroSave(void)
@@ -310,7 +310,7 @@ u32 SramProcessIntroSave(void)
             gSaveFilesInfo[gMostRecentSaveFile].introPlayed = TRUE;
             gGameCompletion.completedGame = gSaveFilesInfo[gMostRecentSaveFile].completedGame;
 
-            // Reset non world data part of the struct 
+            // Reset non world data part of the struct
             BitFill(3, 0, &sSramEwramPointer->files[gMostRecentSaveFile], OFFSET_OF(struct SaveFile, worldData), 0x10);
             gSramOperationStage++;
             break;
@@ -348,7 +348,7 @@ u32 SramProcessIntroSave(void)
 
 /**
  * @brief 736d8 | f4 | Writes the header and game info to the current file
- * 
+ *
  */
 void SramWrite_HeaderAndGameInfo(void)
 {
@@ -403,7 +403,7 @@ void SramWrite_HeaderAndGameInfo(void)
 
 /**
  * @brief 737cc | 124 | Processes saving the current file during the ending
- * 
+ *
  * @return u32 bool, ended
  */
 u32 SramProcessEndingSave(void)
@@ -473,7 +473,7 @@ u32 SramProcessEndingSave(void)
 
 /**
  * @brief 738f0 | f8 | Checks if a new best completion time should be set
- * 
+ *
  */
 void SramCheckSetNewBestCompletionTime(void)
 {
@@ -517,7 +517,7 @@ void SramCheckSetNewBestCompletionTime(void)
 
 /**
  * @brief 739e8 | 9c | Writes the game completion to the current file
- * 
+ *
  */
 void SramCopy_GameCompletion(void)
 {
@@ -561,7 +561,7 @@ void SramCopy_GameCompletion(void)
 
 /**
  * @brief 73a84 | 120 | Processes saving the current file as if it were completed (used by debug code)
- * 
+ *
  * @return u32 bool, ended
  */
 u32 SramProcessEndingSave_Debug(void)
@@ -625,7 +625,7 @@ u32 SramProcessEndingSave_Debug(void)
 
 /**
  * @brief 73ba4 | 140 | Saves the current file to flash sram
- * 
+ *
  * @return u32 bool, ended
  */
 u32 SramSaveFile(void)
@@ -688,7 +688,7 @@ u32 SramSaveFile(void)
 
 /**
  * @brief 73ce4 | 350 | Writes all the current RAM values to the save file values (in Ewram)
- * 
+ *
  */
 void SramWrite_ToEwram(void)
 {
@@ -790,7 +790,7 @@ void SramWrite_ToEwram(void)
 
 /**
  * @brief 74034 | 2ac | Loads all the current save file values (in Ewram) to RAM
- * 
+ *
  */
 void SramRead_FromEwram(void)
 {
@@ -863,7 +863,7 @@ void SramRead_FromEwram(void)
 
 /**
  * @brief 742e0 | 24 | Copies a string from src to dst, of length size
- * 
+ *
  * @param dst Destination pointer
  * @param src Source pointer
  * @param length String length
@@ -878,14 +878,14 @@ void StringCopy(u8* dst, const u8* const src, u8 length)
 
 /**
  * @brief 74304 | a0 | Performs a series of tests on flash sram to verify it's working correctly
- * 
+ *
  */
 void SramTestFlash(void)
 {
     u32 flags;
     s32 i;
     u8 text[SRAM_TEXT_SIZE];
-    
+
     flags = 0;
     gSramCorruptFlag = FALSE;
 
@@ -924,7 +924,7 @@ void SramTestFlash(void)
 
 /**
  * @brief 743a4 | 1d0 | To document
- * 
+ *
  */
 void unk_743a4(void)
 {
@@ -983,7 +983,7 @@ void unk_743a4(void)
 
 /**
  * @brief 74574 | b0 | To document
- * 
+ *
  */
 void unk_74574(void)
 {
@@ -1016,7 +1016,7 @@ void unk_74574(void)
 
 /**
  * @brief 74624 | 168 | To document
- * 
+ *
  * @param useCopy Use file copy flag
  * @return u32 Sanity checks
  */
@@ -1098,7 +1098,7 @@ u32 unk_74624(u8 useCopy)
 
 /**
  * @brief 7478c | 20 | Reads a save file from Ewram
- * 
+ *
  */
 void SramLoadFile(void)
 {
@@ -1111,7 +1111,7 @@ void SramLoadFile(void)
 
 /**
  * @brief 747ac | 10 | Reads a save file from Ewram, unused
- * 
+ *
  */
 void SramLoadFile_Unused(void)
 {
@@ -1121,7 +1121,7 @@ void SramLoadFile_Unused(void)
 
 /**
  * @brief 747bc | 100 | Save the arrays to sram
- * 
+ *
  */
 void SramWrite_Arrays(void)
 {
@@ -1135,7 +1135,7 @@ void SramWrite_Arrays(void)
     pFile = &sSramEwramPointer->files[gMostRecentSaveFile];
 
     dst = &pFile->worldData;
-    
+
     DmaTransfer(3, gVisitedMinimapTiles, dst->visitedMinimapTiles, sizeof(dst->visitedMinimapTiles), 16);
     DmaTransfer(3, gHatchesOpened, dst->hatchesOpened, sizeof(dst->hatchesOpened), 16);
     DmaTransfer(3, gEventsTriggered, dst->eventsTriggered, sizeof(dst->eventsTriggered), 16);
@@ -1169,7 +1169,7 @@ void SramWrite_Arrays(void)
 
 /**
  * @brief 748bc | 128 | Loads the sram arrays to ram
- * 
+ *
  */
 void SramRead_Arrays(void)
 {
@@ -1223,7 +1223,7 @@ void SramRead_Arrays(void)
 
 /**
  * @brief 749e4 | 98 | Writes the most recent save file id to flash sram
- * 
+ *
  */
 void SramWrite_MostRecentSaveFile(void)
 {
@@ -1266,7 +1266,7 @@ void SramWrite_MostRecentSaveFile(void)
 
 /**
  * @brief 74a7c | f0 | Read the most recent save file id from flash sram
- * 
+ *
  */
 void SramRead_MostRecentSaveFile(void)
 {
@@ -1317,7 +1317,7 @@ void SramRead_MostRecentSaveFile(void)
                 }
             }
         }
-    } 
+    }
 
     if (error == 0)
     {
@@ -1332,7 +1332,7 @@ void SramRead_MostRecentSaveFile(void)
 
 /**
  * @brief 74b6c | 9c | Writes the sound mode (stereo) to flash sram
- * 
+ *
  */
 void SramWrite_SoundMode(void)
 {
@@ -1375,7 +1375,7 @@ void SramWrite_SoundMode(void)
 
 /**
  * @brief 74c08 | f0 | Reads the sound mode (stereo) from flash sram
- * 
+ *
  */
 void SramRead_SoundMode(void)
 {
@@ -1425,7 +1425,7 @@ void SramRead_SoundMode(void)
                 }
             }
         }
-    } 
+    }
 
     if (error == 0)
     {
@@ -1440,7 +1440,7 @@ void SramRead_SoundMode(void)
 
 /**
  * @brief 74cf8 | ac | Writes the language to flash sram
- * 
+ *
  */
 void SramWrite_Language(void)
 {
@@ -1449,7 +1449,7 @@ void SramWrite_Language(void)
     u16 checksum;
     u16* ptr;
     u32 value;
-    
+
     pSave = &sSramEwramPointer->languagesSave[0];
     ptr = (u16*)pSave;
 
@@ -1457,7 +1457,7 @@ void SramWrite_Language(void)
     pSave->counter++;
     pSave->checksum = 0;
     pSave->notChecksum = ~0;
-    
+
     i = gLanguage;
     if ((u32)i >= LANGUAGE_COUNT)
     {
@@ -1495,8 +1495,8 @@ void SramWrite_Language(void)
 
 /**
  * @brief 74da4 | 1b4 | Reads the language from flash sram
- * 
- * @return u32 
+ *
+ * @return u32
  */
 u32 SramRead_Language(void)
 {
@@ -1593,7 +1593,7 @@ u32 SramRead_Language(void)
 
 /**
  * @brief 74f58 | b8 | Writes the time attack data to flash sram
- * 
+ *
  */
 void SramWrite_TimeAttack(void)
 {
@@ -1611,7 +1611,7 @@ void SramWrite_TimeAttack(void)
     pSave->notChecksum = ~0;
 
     pSave->value = gTimeAttackRecord;
-    
+
     // Write start/end strings
     for (i = 0; i < SRAM_TEXT_SIZE; i++)
     {
@@ -1637,7 +1637,7 @@ void SramWrite_TimeAttack(void)
 
 /**
  * @brief 75010 | 1c8 | Reads the time attack data from flash sram
- * 
+ *
  */
 void SramRead_TimeAttack(void)
 {
@@ -1728,7 +1728,7 @@ void SramRead_TimeAttack(void)
 
 /**
  * @brief 751d8 | 18c | Writes RAM values to the demo save in Sram
- * 
+ *
  */
 void SramWrite_ToEwram_DemoRam(void)
 {
@@ -1748,7 +1748,7 @@ void SramWrite_ToEwram_DemoRam(void)
     pFile->screwSpeedAnimation = gScrewSpeedAnimation;
     pFile->equipment = gEquipment;
     pFile->hazardDamage = gSamusHazardDamage;
-    
+
     pFile->environmentalEffects[0] = gSamusEnvironmentalEffects[0];
     pFile->environmentalEffects[1] = gSamusEnvironmentalEffects[1];
     pFile->environmentalEffects[2] = gSamusEnvironmentalEffects[2];
@@ -1773,7 +1773,7 @@ void SramWrite_ToEwram_DemoRam(void)
 
 /**
  * @brief 75364 | 130 | Loads the demo ram values
- * 
+ *
  * @param loadSamusData Load samus data flag
  * @param demoNumber Demo number
  */
@@ -1791,7 +1791,7 @@ void SramLoad_DemoRamValues(u8 loadSamusData, u8 demoNumber)
 
         DmaTransfer(3, pDemo->visitedMinimapTiles, gVisitedMinimapTiles[gCurrentArea], sizeof(pDemo->visitedMinimapTiles), 16);
         DmaTransfer(3, pDemo->hatchesOpened, gHatchesOpened[gCurrentArea], sizeof(pDemo->hatchesOpened), 16);
-    } 
+    }
     else if (loadSamusData == TRUE)
     {
         gSamusData = pDemo->samusData;
@@ -1810,7 +1810,7 @@ void SramLoad_DemoRamValues(u8 loadSamusData, u8 demoNumber)
 
 /**
  * @brief 75494 | 110 | Deletes a save file
- * 
+ *
  * @param file Save file id
  * @return u32 bool, ended
  */
@@ -1865,7 +1865,7 @@ u32 SramDeleteFile(u8 file)
 
 /**
  * @brief 755a4 | 11c | Copies a save file
- * 
+ *
  * @param src Source file
  * @param dst Destination file
  * @return u32 bool, ended
@@ -1927,7 +1927,7 @@ u32 SramCopyFile(u8 src, u8 dst)
 
 /**
  * @brief 756c0 | 108 | Writes the SRAM data to the file info
- * 
+ *
  */
 void SramWrite_FileInfo(void)
 {
@@ -1936,7 +1936,7 @@ void SramWrite_FileInfo(void)
     struct SaveFile* pFile;
 
     pSram = &gSram;
-    
+
     for (i = 0; i < ARRAY_SIZE(pSram->files); i++)
     {
         pFile = &pSram->files[i];
@@ -1992,7 +1992,7 @@ void SramWrite_FileInfo(void)
             gSaveFilesInfo[i].difficulty = DIFF_NORMAL;
         else
             gSaveFilesInfo[i].difficulty = pFile->difficulty;
-        
+
         gSaveFilesInfo[i].language = pFile->gameCompletion.language;
         gSaveFilesInfo[i].timeAttack = pFile->timeAttack;
     }
@@ -2000,7 +2000,7 @@ void SramWrite_FileInfo(void)
 
 /**
  * @brief 757c8 | 84 | To document
- * 
+ *
  * @param file File number
  */
 void unk_757c8(u8 file)
@@ -2033,7 +2033,7 @@ void unk_757c8(u8 file)
 
 /**
  * @brief 7584c | 120 | To document
- * 
+ *
  * @param param_1 To document
  */
 void unk_7584c(u8 param_1)
@@ -2067,7 +2067,7 @@ void unk_7584c(u8 param_1)
             if (gDemoState != DEMO_STATE_NONE)
 #endif // DEBUG
             {
-                gDebugMode = FALSE;            
+                gDebugMode = FALSE;
             }
 
 #if defined(REGION_EU)
@@ -2124,7 +2124,7 @@ void unk_7584c(u8 param_1)
 
 /**
  * @brief 7596c | 128 | Checks if a save file should load
- * 
+ *
  */
 void Sram_CheckLoadSaveFile(void)
 {
@@ -2140,14 +2140,14 @@ void Sram_CheckLoadSaveFile(void)
         gEquipment.downloadedMapStatus = 0;
         gCurrentArea = gSectionInfo.sectionIndex;
         gAreaBeforeTransition = gSectionInfo.sectionIndex;
-        
+
         gCurrentRoom = 0;
         gLastDoorUsed = 0;
 
         gGameCompletion.completedGame = gSaveFilesInfo[gMostRecentSaveFile].completedGame;
         gGameCompletion.introPlayed = gSaveFilesInfo[gMostRecentSaveFile].introPlayed;
         gGameCompletion.language = gSaveFilesInfo[gMostRecentSaveFile].language;
-    
+
         gDifficulty = gSaveFilesInfo[gMostRecentSaveFile].difficulty;
         gTimeAttackFlag = gSaveFilesInfo[gMostRecentSaveFile].timeAttack;
         gUseMotherShipDoors = FALSE;

@@ -24,7 +24,7 @@ static void SamusInBlueShipProcessOam(void);
 
 /**
  * @brief 67d8c | f8 | Handles the sip powering up part (entire cutscene)
- * 
+ *
  * @return u8 FALSE
  */
 static u8 SamusInBlueShipPoweringUp(void)
@@ -94,7 +94,7 @@ static u8 SamusInBlueShipPoweringUp(void)
 
 /**
  * @brief 67e84 | 4c | Handles the screen shake movement
- * 
+ *
  * @param pGraphics Cutscene graphics data pointer
  */
 static void SamusInBlueShipShakeScreen(struct CutsceneGraphicsData* pGraphics)
@@ -118,7 +118,7 @@ static u8 sSamusInBlueShipPanelTransparency[4] = {
 
 /**
  * @brief 67ed0 | c0 | Updates the control panel object
- * 
+ *
  * @param pOam Cutscene OAM data pointer
  */
 static void SamusInBlueShipUpdateControlPanel(struct CutsceneOamData* pOam)
@@ -170,7 +170,7 @@ static void SamusInBlueShipUpdateControlPanel(struct CutsceneOamData* pOam)
 
 /**
  * @brief 67f90 | 12c | Initializes the samus in blue ship cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 SamusInBlueShipInit(void)
@@ -229,7 +229,7 @@ static struct CutsceneStageData sSamusInBlueShipStageData[3] = {
 
 /**
  * @brief 680bc | 34 | Main loop for the samus in blue ship cutscene
- * 
+ *
  * @return u8 bool, ended
  */
 u8 SamusInBlueShipHandler(void)
@@ -245,7 +245,7 @@ u8 SamusInBlueShipHandler(void)
 
 /**
  * @brief 680f0 | 38 | Processes the OAM
- * 
+ *
  */
 static void SamusInBlueShipProcessOam(void)
 {

@@ -16,7 +16,7 @@
 
 /**
  * @brief 53968 | 40 | Determines the current escape timer (if any) based on the events
- * 
+ *
  * @return u8 Escape ID
  */
 Escape EscapeDetermineTimer(void)
@@ -43,7 +43,7 @@ Escape EscapeDetermineTimer(void)
 
 /**
  * @brief 539a8 | 38 | Checks if Samus has escaped
- * 
+ *
  * @return u8 TRUE if escaped, FALSE otherwise
  */
 boolu8 EscapeCheckHasEscaped(void)
@@ -67,7 +67,7 @@ boolu8 EscapeCheckHasEscaped(void)
 
 /**
  * @brief 539e0 | 38 | Updates the OAM of the escape timer
- * 
+ *
  */
 void EscapeUpdateOam(void)
 {
@@ -86,7 +86,7 @@ void EscapeUpdateOam(void)
 
 /**
  * @brief 53a18 | 30 | Checks if the escape timer graphics should reload
- * 
+ *
  */
 void EscapeCheckReloadGraphics(void)
 {
@@ -98,7 +98,7 @@ void EscapeCheckReloadGraphics(void)
 
 /**
  * @brief 53a48 | 60 | Starts an escape
- * 
+ *
  */
 void EscapeStart(void)
 {
@@ -116,7 +116,7 @@ void EscapeStart(void)
 
 /**
  * @brief 53aa8 | bc | Sets the timer for the current escape
- * 
+ *
  */
 void EscapeSetTimer(void)
 {
@@ -160,7 +160,7 @@ void EscapeSetTimer(void)
 
 /**
  * @brief 53b64 | 104 | Updates the escape timer
- * 
+ *
  */
 void EscapeUpdateTimer(void)
 {

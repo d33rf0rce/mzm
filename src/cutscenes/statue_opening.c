@@ -28,8 +28,8 @@ static void StatueOpeningProcessOam(void);
 
 /**
  * @brief 66c00 | 164 | Handles the statue opening animation
- * 
- * @return u8 
+ *
+ * @return u8
  */
 static u8 StatueOpeningOpening(void)
 {
@@ -98,7 +98,7 @@ static u8 StatueOpeningOpening(void)
                         UpdateCutsceneOamDataId(&CUTSCENE_DATA.oam[0], STATUE_OPENING_OAM_ID_KRAID_ACTIVATING);
                     else if (gCurrentArea == AREA_RIDLEY)
                         UpdateCutsceneOamDataId(&CUTSCENE_DATA.oam[1], STATUE_OPENING_OAM_ID_RIDLEY_ACTIVATING);
-    
+
                     SoundPlay(SOUND_STATUE_OPENING_STATUE_ACTIVATING);
                     CUTSCENE_DATA.timeInfo.subStage++;
                     CUTSCENE_DATA.timeInfo.timer = 0;
@@ -133,14 +133,14 @@ static u8 StatueOpeningOpening(void)
 
 /**
  * @brief 66d64 | 2b0 | Initializes the statue opening cutscene
- * 
+ *
  * @return u8 FALSE
  */
 static u8 StatueOpeningInit(void)
 {
     u8 oamId;
     const u8* ptr;
-    
+
     CutsceneFadeScreenToBlack();
     DmaTransfer(3, sBossStatuesPal, PALRAM_OBJ + 8 * PAL_ROW_SIZE, sizeof(sBossStatuesPal), 16);
     DmaTransfer(3, sStatueOpeningPal, PALRAM_BASE, sizeof(sStatueOpeningPal), 16);
@@ -149,7 +149,7 @@ static u8 StatueOpeningInit(void)
     CallLZ77UncompVram(sStatueOpeningRoomGfx, BGCNT_TO_VRAM_CHAR_BASE(sStatueOpeningPageData[0].graphicsPage) + 0x1800);
 
     ptr = (const u8*)sTileset_65_Bg_Gfx;
-    CallLZ77UncompVram(ptr, VRAM_BASE + 0xFDE0 - C_16_2_8(ptr[2], ptr[1])); 
+    CallLZ77UncompVram(ptr, VRAM_BASE + 0xFDE0 - C_16_2_8(ptr[2], ptr[1]));
     CallLZ77UncompVram(sStatueOpeningRoomTileTable, BGCNT_TO_VRAM_TILE_BASE(sStatueOpeningPageData[0].tiletablePage));
     CallLZ77UncompVram(sStatueOpening_3effc8, BGCNT_TO_VRAM_TILE_BASE(sStatueOpeningPageData[1].tiletablePage));
     CallLZ77UncompVram(&sBrinstar_Bg3_9[4], BGCNT_TO_VRAM_TILE_BASE(sStatueOpeningPageData[2].tiletablePage));
@@ -241,7 +241,7 @@ static struct CutsceneStageData sStatueOpeningStageData[3] = {
 
 /**
  * @brief 67014 | 34 | Main loop for the statue opening cutscene
- * 
+ *
  * @return u8 bool, ended
  */
 u8 StatueOpeningHandler(void)
@@ -258,7 +258,7 @@ u8 StatueOpeningHandler(void)
 
 /**
  * @brief 67048 | 38 | Processes the OAM for the cutscene
- * 
+ *
  */
 static void StatueOpeningProcessOam(void)
 {

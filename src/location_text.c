@@ -14,8 +14,8 @@
 #include "structs/room.h"
 
 /**
- * @brief 11ed8 | b8 | Gets the location text of the current room for brinstar 
- * 
+ * @brief 11ed8 | b8 | Gets the location text of the current room for brinstar
+ *
  * @return LocationTextId Location text
  */
 static LocationTextId LocationTextGetBrinstar(void)
@@ -31,7 +31,7 @@ static LocationTextId LocationTextGetBrinstar(void)
         case 26: // Elevator to norfair room
         // Useless cases, since the spriteset is checked before and those rooms have a spriteset that result in the save room text
         // Thus this function isn't even called
-        case 33: // Save room 1 
+        case 33: // Save room 1
         case 34: // Save room 2
             lt = LT_BRINSTAR;
             break;
@@ -44,8 +44,8 @@ static LocationTextId LocationTextGetBrinstar(void)
 }
 
 /**
- * @brief 11f90 | d0 | Gets the location text of the current room for kraid 
- * 
+ * @brief 11f90 | d0 | Gets the location text of the current room for kraid
+ *
  * @return LocationTextId Location text
  */
 static LocationTextId LocationTextGetKraid(void)
@@ -75,8 +75,8 @@ static LocationTextId LocationTextGetKraid(void)
 }
 
 /**
- * @brief 12060 | 7c | Gets the location text of the current room for crateria 
- * 
+ * @brief 12060 | 7c | Gets the location text of the current room for crateria
+ *
  * @return LocationTextId Location text
  */
 static LocationTextId LocationTextGetCrateria(void)
@@ -113,8 +113,8 @@ static LocationTextId LocationTextGetCrateria(void)
 }
 
 /**
- * @brief 120dc | e8 | Gets the location text of the current room for norfair 
- * 
+ * @brief 120dc | e8 | Gets the location text of the current room for norfair
+ *
  * @return LocationTextId Location text
  */
 static LocationTextId LocationTextGetNorfair(void)
@@ -147,8 +147,8 @@ static LocationTextId LocationTextGetNorfair(void)
 }
 
 /**
- * @brief 121c4 | 98 | Gets the location text of the current room for ridley 
- * 
+ * @brief 121c4 | 98 | Gets the location text of the current room for ridley
+ *
  * @return LocationTextId Location text
  */
 static LocationTextId LocationTextGetRidley(void)
@@ -167,7 +167,7 @@ static LocationTextId LocationTextGetRidley(void)
 
         case 21: // Map room
             lt = LT_MAP_ROOM;
-            break; 
+            break;
 
         case 0: // Elevator to norfair room
         case 2: // Imago cocoon tunnel room
@@ -178,8 +178,8 @@ static LocationTextId LocationTextGetRidley(void)
 }
 
 /**
- * @brief 1225c | 1a8 | Gets the location text of the current room for chozodia 
- * 
+ * @brief 1225c | 1a8 | Gets the location text of the current room for chozodia
+ *
  * @return LocationTextId Location text
  */
 static LocationTextId LocationTextGetChozodia(void)
@@ -188,7 +188,7 @@ static LocationTextId LocationTextGetChozodia(void)
 
     lt = LT_INVALID;
     switch (gCurrentRoom)
-    {        
+    {
         case 0: // Suitless spawn room
         case 34: // Crateria passage with missile tank room
         case 68: // Crateria passage without missile tank room
@@ -213,8 +213,8 @@ static LocationTextId LocationTextGetChozodia(void)
 }
 
 /**
- * @brief 12404 | 80 | Gets the location text of the current room for tourian 
- * 
+ * @brief 12404 | 80 | Gets the location text of the current room for tourian
+ *
  * @return LocationTextId Location text
  */
 static LocationTextId LocationTextGetTourian(void)
@@ -241,7 +241,7 @@ static LocationTextId LocationTextGetTourian(void)
 
 /**
  * @brief 12484 | 58 | Loads area banner graphics and palette
- * 
+ *
  * @return u8 Gfx slot
  */
 static u8 LocationTextLoadAreaBannerGfx(void)
@@ -275,9 +275,9 @@ static u8 LocationTextLoadAreaBannerGfx(void)
 }
 
 /**
- * 124dc | 10c | Gets the current area location text number and returns the Gfx slot for it, also does some part of the area banner sprite setup 
- * 
- * @return u8 Gfx slot 
+ * 124dc | 10c | Gets the current area location text number and returns the Gfx slot for it, also does some part of the area banner sprite setup
+ *
+ * @return u8 Gfx slot
  */
 u8 LocationTextGetGfxSlot(void)
 {
